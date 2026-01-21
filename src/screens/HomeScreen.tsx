@@ -65,7 +65,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
 
     Alert.alert(
       "Delete todo",
-      "Bạn có chắc chắn muốn xóa todo này không?",
+      "Bạn có chắc chắn muốn xóa weather này không?",
       [
         { text: "Cancel", style: "cancel" },
         {
