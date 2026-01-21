@@ -1,18 +1,21 @@
+import { Platform } from "react-native";
+
 export const colors = {
   // Primary colors
-  primary: "#5DA9E9",
   primaryDark: "#1E6BB8",
-  primaryLight: "#9ED0FF",
-
+  /* ========= BRAND ========= */
+  primary: "#4FACFE",
+  primaryLight: "#8EC5FF",
+  accent: "#FFD166",
   // Background colors
-  background: "#0B1C2D",
+  background: "#0B1220",
   backgroundLight: "#132F4C",
   backgroundDark: "#071423",
 
   // Text colors
-  textPrimary: "#F8FAFC",
-  textSecondary: "rgba(248, 250, 252, 0.75)",
-  textMuted: "rgba(248, 250, 252, 0.45)",
+  textPrimary: "#FFFFFF",
+  textSecondary: "rgba(255,255,255,0.75)",
+  textMuted: "rgba(255,255,255,0.45)",
 
   // Status colors
   error: "#FF6B6B",
@@ -20,8 +23,11 @@ export const colors = {
   warning: "#FACC15",
 
   // Card colors (glassmorphism)
-  cardBackground: "rgba(255, 255, 255, 0.12)",
-  cardBorder: "rgba(255, 255, 255, 0.18)",
+  cardBackground:
+    Platform.OS === "web" ? "rgba(255,255,255,0.22)" : "rgba(255,255,255,0.15)",
+
+  cardItemBackground: "rgba(255,255,255,0.12)",
+  cardBorder: "rgba(255,255,255,0.2)",
 };
 export const gradients = {
   clear: ["#FF9F1C", "#FF6F00", "#9B2226"] as const,

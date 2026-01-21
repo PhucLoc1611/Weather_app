@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Alert,
+  Platform,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { LinearGradient } from "expo-linear-gradient";
@@ -47,6 +54,28 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
   }, [cities]);
   const handleDeleteCity = (id: number) => {
     setCities((prev) => prev.filter((city) => city.id !== id));
+  };
+
+  const confirmDelete = (id: number) => {
+    if (Platform.OS === "web") {
+      const ok = window.confirm("Bạn có chắc chắn muốn xóa todo này không?");
+      if (ok) handleDeleteCity(id);
+      return;
+    }
+
+    Alert.alert(
+      "Delete todo",
+      "Bạn có chắc chắn muốn xóa todo này không?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: () => handleDeleteCity(id),
+        },
+      ],
+      { cancelable: true },
+    );
   };
   const handleSearch = async (city: string) => {
     setLoading(true);
@@ -97,10 +126,8 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           {/* Header */}
           <View style={styles.header}>
             <Cloud size={40} color={colors.primaryLight} />
-            <Text style={styles.title}>Weather App</Text>
-            <Text style={styles.subtitle}>
-              Tìm kiếm thời tiết theo thành phố
-            </Text>
+            <Text style={styles.title}>Weather</Text>
+            <Text style={styles.subtitle}>Tìm kiếm thời tiết thành phố</Text>
           </View>
 
           {/* Search Input */}
@@ -126,7 +153,7 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
                     weatherData: city,
                   })
                 }
-                onDelete={() => handleDeleteCity(city.id)}
+                onDelete={() => confirmDelete(city.id)}
               />
             ))}
 

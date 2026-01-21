@@ -218,136 +218,195 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+
   safeArea: {
     flex: 1,
   },
+
   scrollContent: {
-    paddingBottom: spacing.xl,
+    paddingBottom: spacing.xxl,
   },
+
+  /* ---------- HEADER ---------- */
   header: {
     alignItems: "center",
-    paddingTop: spacing.lg,
-    paddingBottom: spacing.xl,
+    paddingTop: spacing.xl,
+    paddingBottom: spacing.xxl,
   },
+
   locationRow: {
     flexDirection: "row",
     alignItems: "center",
+    marginBottom: spacing.sm,
   },
+
   cityName: {
     fontSize: typography.fontSize.xl,
     fontWeight: typography.fontWeight.bold,
     color: colors.textPrimary,
     marginLeft: spacing.sm,
   },
+
   country: {
     fontSize: typography.fontSize.lg,
     color: colors.textSecondary,
     marginLeft: spacing.xs,
   },
+
   mainWeather: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: spacing.md,
+    marginTop: spacing.lg,
+    marginBottom: spacing.sm,
   },
+
   mainIcon: {
-    width: 100,
-    height: 100,
+    width: 110,
+    height: 110,
+    marginRight: spacing.sm,
   },
+
   temperature: {
     fontSize: typography.fontSize.giant,
     fontWeight: typography.fontWeight.bold,
     color: colors.textPrimary,
   },
+
   description: {
     fontSize: typography.fontSize.xl,
     color: colors.textPrimary,
     marginTop: spacing.sm,
+    letterSpacing: 0.4,
   },
+
   highLow: {
     fontSize: typography.fontSize.md,
     color: colors.textSecondary,
-    marginTop: spacing.xs,
+    marginTop: spacing.sm,
   },
+
+  /* ---------- SECTION CARD ---------- */
   section: {
     marginHorizontal: spacing.md,
     marginTop: spacing.lg,
+    padding: spacing.lg,
+    borderRadius: borderRadius.xl,
     backgroundColor: colors.cardBackground,
-    borderRadius: borderRadius.lg,
-    padding: spacing.md,
+
+    shadowColor: "#000",
+    shadowOpacity: 0.15,
+    shadowRadius: 12,
+    shadowOffset: { width: 0, height: 8 },
+    elevation: 6,
   },
+
   sectionHeader: {
     flexDirection: "row",
     alignItems: "center",
     marginBottom: spacing.md,
   },
+
   sectionTitle: {
     fontSize: typography.fontSize.lg,
     fontWeight: typography.fontWeight.semibold,
     color: colors.textSecondary,
     marginLeft: spacing.sm,
   },
+
+  /* ---------- FORECAST ---------- */
   forecastList: {
     paddingVertical: spacing.sm,
   },
+
   forecastItem: {
     alignItems: "center",
+    justifyContent: "space-between",
     marginRight: spacing.lg,
-    minWidth: 60,
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    borderRadius: borderRadius.md,
+    minWidth: 72,
   },
+
   forecastDay: {
-    fontSize: typography.fontSize.md,
+    fontSize: typography.fontSize.sm,
     color: colors.textSecondary,
-    fontWeight: typography.fontWeight.medium,
+    marginBottom: spacing.xs,
   },
+
   forecastIcon: {
-    width: 50,
-    height: 50,
+    width: 52,
+    height: 52,
   },
+
   forecastTemp: {
     fontSize: typography.fontSize.lg,
     color: colors.textPrimary,
     fontWeight: typography.fontWeight.semibold,
+    marginTop: spacing.xs,
   },
+
+  /* ---------- DETAILS GRID ---------- */
   detailsGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    marginTop: spacing.sm,
   },
+
   detailItem: {
     width: "48%",
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    borderRadius: borderRadius.md,
-    padding: spacing.md,
-    marginBottom: spacing.sm,
+    paddingVertical: spacing.lg,
+    paddingHorizontal: spacing.md,
+    marginBottom: spacing.md,
+    borderRadius: borderRadius.lg,
     alignItems: "center",
+    justifyContent: "center",
+
+    backgroundColor: "rgba(255,255,255,0.1)",
+
+    shadowColor: "#000",
+    shadowOpacity: 0.12,
+    shadowRadius: 8,
+    shadowOffset: { width: 0, height: 6 },
+    elevation: 4,
   },
+
   detailLabel: {
     fontSize: typography.fontSize.sm,
     color: colors.textSecondary,
-    marginTop: spacing.xs,
+    marginTop: spacing.sm,
   },
+
   detailValue: {
     fontSize: typography.fontSize.lg,
     color: colors.textPrimary,
     fontWeight: typography.fontWeight.semibold,
     marginTop: spacing.xs,
   },
+
+  /* ---------- SUN TIME ---------- */
   sunTimes: {
     flexDirection: "row",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    paddingHorizontal: spacing.lg,
   },
+
   sunTimeItem: {
+    flex: 1,
     alignItems: "center",
   },
+
   sunTimeLabel: {
     fontSize: typography.fontSize.sm,
     color: colors.textSecondary,
     marginTop: spacing.sm,
   },
+
   sunTimeValue: {
-    fontSize: typography.fontSize.xl,
+    fontSize: typography.fontSize.xxl,
     color: colors.textPrimary,
     fontWeight: typography.fontWeight.semibold,
-    marginTop: spacing.xs,
+    marginTop: spacing.sm,
   },
 });
